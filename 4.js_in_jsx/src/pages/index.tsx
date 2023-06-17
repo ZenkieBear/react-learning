@@ -1,8 +1,10 @@
 import TodoList from "./TodoList";
 
 export default function Avatar() {
-    const avatar = "https://i.imgur.com/7vQD0fPs.jpg";
-    const description = "Gregorio Y. Zara";
+    const user = {
+      avatar: "https://i.imgur.com/7vQD0fPs.jpg",
+      description: "Gregorio Y. Zara"
+    }
 
     return (
       <div>
@@ -13,8 +15,8 @@ export default function Avatar() {
             // alt='Gregorio Y. Zara'
 
             // Use {} instead of quotation mark, and passing a value dynamically.
-            src={avatar}
-            alt={description}
+            src={user.avatar}
+            alt={user.description}
         />
         <TodoList />
         <ul
