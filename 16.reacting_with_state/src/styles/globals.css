@@ -1,0 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+section {
+  border-bottom: 1px solid #aaa;
+  padding: 20px;
+}
+.error {
+  color: red;
+}
