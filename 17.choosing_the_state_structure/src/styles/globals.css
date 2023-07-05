@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.dot {
+    position: absolute;
+    background: red;
+    border-radius: 50%;
+    top: calc(-20px - 2rem);
+    left: -10px;
+    width: 10px;
+    height: 20px;
+    transition: width .2s,
+        height .2s ;
+}
+.dot:hover {
+    width: 25px;
+    height: 25px;
+}
+ol {
+    padding-left: 5px;
+}
+ol li {
+    padding: 5px 1rem;
+}
