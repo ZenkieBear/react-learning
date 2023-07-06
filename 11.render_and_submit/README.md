@@ -1,4 +1,4 @@
-# Summary
+# Render and Commit
 - Any screen update in a React app happens in three steps:
   1. Trigger
   2. Render

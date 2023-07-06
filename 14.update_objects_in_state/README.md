@@ -1,4 +1,4 @@
-# Summary
+# Updating Object in State
 - Treat all state in React as *immutable*.
 - When you store objects in state, mutating them will not trigger renders and will change the state in previous render "snapshot".
 - Instead of mutating an object, create a *new* version of it, and trigger a re-render by setting state to it.

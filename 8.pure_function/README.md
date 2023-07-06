@@ -1,4 +1,4 @@
-# Summary
+# Keeping Components Pure
 - A component must be pure, it means:
   - ***Only responsible for it's own tasks.*** It won't change any variable which already exists before the function has been called.
   - ***Every inputs match the its same output.*** Gaven the same input, the component should always return the same JSX.

@@ -1,3 +1,4 @@
+# Reacting to Input with State
 - Declarative programming means describing the UI for each visual state rather than micromanaging the UI (imperative).
 - When developing a component:
   1. Identify all its visual states.

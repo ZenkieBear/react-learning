@@ -1,4 +1,4 @@
-# Summary
+# Importing and Exporting Components
 - Use `export` to export a component.
   Use `import` to import a component.
 - There're two way to export and import:

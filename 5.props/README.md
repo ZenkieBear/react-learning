@@ -1,4 +1,4 @@
-# Summary
+# Passing Props to a Component
 1. To transfer props, please add them to JSX like using HTML attribute.
 2. To read props, please use `function Avatar({ person, size })` deconstructive grammer.
 3. You could specify a default-value, like `size = 100`, for props which hasn't value or `undefined` value props.

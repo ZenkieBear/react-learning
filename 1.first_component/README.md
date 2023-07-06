@@ -1,4 +1,4 @@
-# Summary
+# Your First Component
 - React allows we create components, its a reusable UI element.
 - In react appliation, every UI module is a component.
 - React is commonly *JavaScript* function, except:

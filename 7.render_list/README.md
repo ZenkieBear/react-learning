@@ -1,4 +1,4 @@
-# Summary
+# Rendering List
 You learned:
 - How to extract data from component, and put them in array or object likely data structions.
 - How to generate a set of similar components by using `map()`

@@ -1,4 +1,4 @@
-# Summary
+# Conditional Rendering
 - At react, you could use JavaScript to control branch logics.
 - You can use `if` statement to return value selectively.
 - You can selectively assign some JSX values to variables, and then embed them into other JSXs using curly braces.

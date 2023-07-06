@@ -1,4 +1,4 @@
-# Summary
+# Responding to Events
 - You can handle events by passing a function as prop to an element like `<button>`.
 - Event handler function must be passed, not function calls! `onClick={handleClick}`, not `onClick={handleClick()}`.
 - You can define an event handler function spearately or inline.

@@ -1,4 +1,4 @@
-# Summary
+# Choosing the State Structure
 - If two state variables always udpate together, consider merging them into one.
 - Choose your state variable carefully to avoid creating “impossible” states.
 - Structure your state in a way that reduces the chances that you’ll make a mistake updating it.

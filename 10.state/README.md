@@ -1,5 +1,4 @@
-# Summary
-
+# State: A Component's Memory
 - Use a state variable when a component needs to "remember" some information between renders.
 - State variables are declared by calling the `useState` Hook.
 - Hooks are special functions that start with `use`. They let you "hook into" React features like state.

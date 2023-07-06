@@ -1,4 +1,4 @@
-# Summary
+# State as a Snapshot
 - Setting state requests a new render.
 - React stores state outside of you component, as if on a shelf.
 - When you call `useState`, React gives you a snapshot of the state for that render.
