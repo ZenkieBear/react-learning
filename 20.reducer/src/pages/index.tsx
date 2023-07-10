@@ -2,7 +2,7 @@ import { Reducer, useReducer } from "react";
 import { useImmerReducer } from "use-immer";
 import AddTask from "./AddTask";
 import TaskList from "./TaskList";
-import taskReducer from "./TaskReducer";
+import taskReducer from "./taskReducer";
 
 export default function App() {
   // const [tasks, setTasks] = useState(initialTasks);
