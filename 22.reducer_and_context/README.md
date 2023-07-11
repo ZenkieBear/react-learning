@@ -1,4 +1,4 @@
-# Scalling Up with Reducer and Context
+# Scaling Up with Reducer and Context
 - You can combine reducer with context to let any component read and update state above it.
 - To provide state and the dispatch function to components below:
   1. Create two contexts (for state and for dispatch functions).
