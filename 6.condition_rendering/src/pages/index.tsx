@@ -1,4 +1,6 @@
-function Item({ name, isPacked }) {
+import { ReactNode } from "react";
+
+function Item({ name, isPacked }: ItemProps) {
   // // using if statement
   // if (isPacked) {
   //   // return <li className="item">{name} ✔️</li>;
@@ -31,7 +33,7 @@ function Item({ name, isPacked }) {
    Selectively give JSX to variables.
    This approach is the most verbose, but also the most flexible.
    */
-  let itemContent = name;
+  let itemContent: string | ReactNode = name;
   if (isPacked) {
     itemContent = (
       <del>

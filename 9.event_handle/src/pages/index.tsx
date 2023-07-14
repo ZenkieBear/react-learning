@@ -27,7 +27,7 @@ function Button() {
   )
 }
 
-function AlertButton({ message, children }) {
+function AlertButton({ message, children }: AlertButtonProps) {
   return (
     // Your event handler can access props, if it's inside your component.
     <button onClick={() => alert(message)}>
@@ -36,7 +36,7 @@ function AlertButton({ message, children }) {
   )
 }
 
-function Button1({ onClick, children }) {
+function Button1({ onClick, children }: Button1Props) {
   return (
     <button onClick={onClick}>
       {children}
@@ -81,7 +81,7 @@ function Toolbar() {
 }
 
 // This component defined a named event handler prop.
-function Button2({ onSmash, children }) {
+function Button2({ onSmash, children }: Button2Props) {
   return (
     <button onClick={e => {
       // Stop the propagation

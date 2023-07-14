@@ -5,7 +5,7 @@ function double(num: number) {
 }
 
 // It's a pure function.
-function Recipe({ drinkers }) {
+function Recipe({ drinkers }: RecipeProps) {
   return (
     <ol>    
       <li>Boil {drinkers} cups of water.</li>

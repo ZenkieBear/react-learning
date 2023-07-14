@@ -1,0 +1,3 @@
+type RecipeProps = {
+  drinkers: number
+}

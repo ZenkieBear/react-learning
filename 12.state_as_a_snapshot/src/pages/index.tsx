@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 
 /**
  * In this example, `number` only increments once per tick!
@@ -47,7 +47,7 @@ export default function Form() {
   const [to, setTo] = useState('Zenkie Bear');
   const [message, setMessage] = useState('Hello');
 
-  function handleSubmit(e: Event) {
+  function handleSubmit(e: FormEvent) {
     e.preventDefault();
     setTimeout(() => {
       alert(`You said ${message} to ${to}`);

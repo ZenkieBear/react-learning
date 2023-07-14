@@ -48,7 +48,7 @@ export default function Menu() {
           </li>
         ))}
       </ul>
-      <p>You picked {selectedItem.title}.</p>
+      <p>You picked {selectedItem?.title}.</p>
     </>
   );
 }
