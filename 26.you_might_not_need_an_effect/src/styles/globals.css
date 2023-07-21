@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+.example {
+  padding: 5px;
+}
+.example > .title {
+  font-size: 24px;
+}
+.example > .subtitle {
+  font-size: 18px;
+  color: rgb(43, 43, 43);
+}
