@@ -23,10 +23,10 @@ function ChatRoom() {
     <>
       <label>
         Server URL: {' '}
-        <input
+        {/* <input
           value={serverUrl}
           onChange={e => setServerUrl(e.target.value)}
-        />
+        /> */}
       </label>
       <h1>Welcome to the {roomId} room!</h1>
     </>
