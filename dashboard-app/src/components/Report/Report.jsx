@@ -25,10 +25,10 @@ const Report = () => {
               <div className='grid-chart-bar' key={report.id}>
                 <div className='bar-wrapper'>
                   <div className='bar-item1' style={{
-                    height: `${report.value1 !== null ? "40%" : ""}`
+                    height: `${report.value1 !== null ? `${report.value1}%` : ""}`
                   }}></div>
                   <div className='bar-item2' style={{
-                    height: `${report.value2 !== null ? "60%" : ""}`
+                    height: `${report.value2 !== null ? `${report.value2}%` : ""}`
                   }}></div>
                 </div>
                 <span className='grid-hortz-value'>Jan</span>

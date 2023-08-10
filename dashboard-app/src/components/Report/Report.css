@@ -35,24 +35,21 @@
 .grid-chart-bar .grid-hortz-value {
   margin-top: 12px;
 }
-/* todo 2 examples below is redundant */
-.grid-chart-bar .bar-item1 {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 0;
-  background-color: var(--clr-pumpkin);
-  border-radius: 10px;
-}
+.grid-chart-bar .bar-item1,
 .grid-chart-bar .bar-item2 {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 0;
-  background-color: var(--clr-peach);
   border-radius: 10px;
+  transition: var(--transition-default);
+}
+.grid-chart-bar .bar-item1 {
+  background-color: var(--clr-pumpkin);
+}
+.grid-chart-bar .bar-item2 {
+  background-color: var(--clr-peach);
 }
 .grid-chart-bar:nth-child(3) .bar-wrapper .bar-item1 {
   z-index: 1;
