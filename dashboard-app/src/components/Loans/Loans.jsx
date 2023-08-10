@@ -2,6 +2,7 @@ import { iconsImgs } from "../../utils/images"
 import './Loans.css'
 
 const Loans = () => {
+  const percent = 50;
   return (
     <div className="subgrid-two-item grid-common grid-c7">
       <div className="grid-c-title">
@@ -16,11 +17,11 @@ const Loans = () => {
             <svg>
               <circle cx='105' cy='105' r='50'></circle>
               <circle cx='105' cy='105' r='50' style={{
-                "--percent": 50
+                "--percent": percent
               }}></circle>
             </svg>
             <div className="number">
-              <h3>50<span>%</span></h3>
+              <h3>{percent}<span>%</span></h3>
             </div>
           </div>
         </div>

@@ -1,7 +1,7 @@
 .grid-c7-content {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-self: flex-start;
   margin-top: -42px;
   margin-bottom: -128px;
 }
@@ -18,7 +18,7 @@
   position: relative;
   width: 210px;
   height: 210px;
-  transform: rotate(-90deg);;
+  transform: rotate(-90deg);
 }
 .progress-bar svg circle {
   width: 100%;

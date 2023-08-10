@@ -24,6 +24,7 @@ const ContentMain = () => {
             <Savings />
           </div>
         </div>
+        
         <div className='grid-two-item'>
           <div className='subgrid-two'>
             <Loans />
