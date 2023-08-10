@@ -1,3 +1,6 @@
+.grid-c7 {
+  height: 216px;
+}
 .grid-c7-content {
   display: flex;
   align-items: center;
@@ -59,4 +62,9 @@
   margin-top: 8px;
   display: block;
   font-weight: 600;
+}
+@media screen and (max-width: 1200px) {
+  .grid-c7 {
+    height: 220px;
+  }
 }
