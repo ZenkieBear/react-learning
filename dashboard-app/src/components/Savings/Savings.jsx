@@ -3,6 +3,7 @@ import { iconsImgs, personsImgs } from '../../utils/images'
 import './Savings.css'
 
 const Savings = () => {
+  const saved = 60;
   return (
     <div className="subgrid-two-item grid-common grid-c6">
       <div className="grid-c-title">
@@ -38,7 +39,9 @@ const Savings = () => {
                     </span>
                   </div>
                   <div className="grid-item-progress">
-                    <div className="grid-item-fill"></div>
+                    <div className="grid-item-fill" style={{
+                      '--percent': `${saved}%`
+                    }}></div>
                   </div>
                 </div>
               </div>
