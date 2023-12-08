@@ -8,7 +8,7 @@ const Counter = () => {
   const [incrementAmount, setIncrementAmount] = useState('2')
 
   // inline selector
-  const plusTwo = useAppSelector(state => state.counter.value + 2)
+  // const plusTwo = useAppSelector(state => state.counter.value + 2)
 
   return (
     <div>
