@@ -1,3 +1,8 @@
+> Redux takes troubles more than it resolves!
+> 
+> If your application is complex and maintenanced with multiple people, don't use it!
+> 
+> Use hooks, construct with useContext.
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
