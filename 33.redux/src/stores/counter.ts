@@ -13,8 +13,4 @@ const counterReducer = (state = { value: 0 }, action: Action) => {
 
 const store = createStore(counterReducer)
 
-store.dispatch({ type: 'counter/increment' })
-store.dispatch({ type: 'counter/increment' })
-store.dispatch({ type: 'counter/decrement' })
-
 export default store
