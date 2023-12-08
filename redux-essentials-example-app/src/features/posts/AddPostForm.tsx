@@ -12,7 +12,7 @@ export const AddPostForm = () => {
   const onTitleChanged: ChangeEventHandler<HTMLInputElement> = e => setTitle(e.target.value)
   const onContentChanged: ChangeEventHandler<HTMLTextAreaElement> = e => setContent(e.target.value)
 
-  const handleSave = () => {
+  const savePost = () => {
     if (title && content) {
       dispatch(
         postAdded({
@@ -46,7 +46,7 @@ export const AddPostForm = () => {
           value={content}
           onChange={onContentChanged}
         />
-        <button type="button" onClick={handleSave}>保存文章</button>
+        <button type="button" onClick={savePost}>保存文章</button>
       </form>
     </section>
   )
