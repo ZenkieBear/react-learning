@@ -1,4 +1,6 @@
-import { Dispatch, EnhancedStore, createSlice } from "@reduxjs/toolkit";
+import { AppDispatch, RootState } from "@/app/store";
+import { Dispatch, PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { TypedUseSelectorHook } from "react-redux";
 
 export interface CounterState {
   value: number
@@ -15,7 +17,7 @@ export const counterSlice = createSlice({
     decrement: state => {
       state.value -= 1
     },
-    incrementByAmount: (state, action) => {
+    incrementByAmount: (state, action: PayloadAction<number>) => {
       state.value += action.payload
     }
   }
@@ -27,7 +29,7 @@ export const incrementAsync = (amount: number) => (dispatch: Dispatch) => {
   }, 1000);
 }
 
-export const selectCount = state => state.counter.value
+export const selectCount = (state: RootState) => state.counter.value
 
 export const { increment, decrement, incrementByAmount } = counterSlice.actions
 export default counterSlice.reducer

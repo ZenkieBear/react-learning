@@ -1,14 +1,14 @@
-import { useDispatch, useSelector } from "react-redux"
 import { decrement, increment, incrementAsync, incrementByAmount, selectCount } from "./counterSlice"
 import { useState } from "react"
+import { useAppDispatch, useAppSelector } from "@/app/hooks"
 
 const Counter = () => {
-  const count = useSelector(selectCount)
-  const dispatch = useDispatch()
+  const count = useAppSelector(selectCount)
+  const dispatch = useAppDispatch()
   const [incrementAmount, setIncrementAmount] = useState('2')
 
   // inline selector
-  const plusTwo = useSelector(state => state.counter.value + 2)
+  const plusTwo = useAppSelector(state => state.counter.value + 2)
 
   return (
     <div>
