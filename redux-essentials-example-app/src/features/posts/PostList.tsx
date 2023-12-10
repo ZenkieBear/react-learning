@@ -7,7 +7,10 @@ import TimeAgo from "./TimeAgo"
 export const PostsList = () => {
   const posts = useSelector((state: RootState) => state.posts)
 
-  const renderedPosts = posts.map((post: Post) => (
+  // todo sort by date
+  const orderedPosts = posts.slice().sort((a, b) => b.date.localeCompare(a.date))
+
+  const renderedPosts = orderedPosts.map((post: Post) => (
     <article className="post-excerpt" key={post.id}>
       <h3>
         <div>
