@@ -1,5 +1,5 @@
 import { useAppSelector } from 'app/hooks'
-import { useParams} from 'react-router-dom'
+import { Link, useParams} from 'react-router-dom'
 
 interface RequestParams{
   postId: string
@@ -14,7 +14,7 @@ export const SinglePostPage = () => {
   if (!post) {
     return (
       <section>
-        <h2>页面未找到！</h2>
+        <h2>This page can't be found :{'('}</h2>
       </section>
     )
   }
@@ -24,6 +24,9 @@ export const SinglePostPage = () => {
       <article className="post">
         <h2>{post.title}</h2>
         <p className="post-content">{post.content}</p>
+        <Link to={`/editPost/${post.id}`} className="button">
+          Edit Post
+        </Link>
       </article>
     </section>
   )

@@ -1,5 +1,4 @@
 import { useSelector } from "react-redux"
-import { Post } from "./postsSlice"
 import { RootState } from "app/store"
 import { Link } from "react-router-dom"
 
