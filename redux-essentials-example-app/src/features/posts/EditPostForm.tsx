@@ -1,9 +1,8 @@
-import React, { ChangeEventHandler, useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { ChangeEventHandler, useState } from 'react'
 import { useHistory, useParams } from 'react-router-dom'
 
 import { postUpdated } from './postsSlice'
-import { useAppSelector } from 'app/hooks'
+import { useAppDispatch, useAppSelector } from 'app/hooks'
 
 
 export const EditPostForm = () => {
@@ -15,9 +14,12 @@ export const EditPostForm = () => {
 
   const [title, setTitle] = useState(post?.title)
   const [content, setContent] = useState(post?.content)
+  const [userId, setUserId] = useState(post?.userId ?? '')
 
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
   const history = useHistory()
+
+  const users = useAppSelector(state => state.users)
 
   if (!post) {
     return (
@@ -33,16 +35,16 @@ export const EditPostForm = () => {
 
   const onSavePostClicked = () => {
     if (title && content) {
-      dispatch(postUpdated({ id: postId, title, content }))
+      dispatch(postUpdated({ id: postId, title, content, userId }))
       history.push(`/posts/${postId}`)
     }
   }
 
   return (
     <section>
-      <h2>编辑文章</h2>
+      <h2>Edit post</h2>
       <form>
-        <label htmlFor="postTitle">文章标题：</label>
+        <label htmlFor="postTitle">Post title:</label>
         <input
           type="text"
           id="postTitle"
@@ -51,7 +53,18 @@ export const EditPostForm = () => {
           value={title}
           onChange={onTitleChanged}
         />
-        <label htmlFor="postContent">内容：</label>
+        <label htmlFor="postAuthor">Post author:</label>
+        <select
+          id="postAuthor"
+          value={userId}
+          onChange={e => setUserId(e.target.value)}
+        >
+          <option value="">Please select an user</option>
+          {users.map(user => (
+            <option key={user.id} value={user.id}>{user.name}</option>
+          ))}
+        </select>
+        <label htmlFor="postContent">Content:</label>
         <textarea
           id="postContent"
           name="postContent"
@@ -60,7 +73,7 @@ export const EditPostForm = () => {
         />
       </form>
       <button type="button" onClick={onSavePostClicked}>
-        保存文章
+        Save post
       </button>
     </section>
   )
