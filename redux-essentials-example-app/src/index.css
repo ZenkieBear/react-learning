@@ -161,12 +161,23 @@ button:disabled:hover {
   opacity: 0.5;
 }
 
+.reaction-buttons {
+  display: inline-flex;
+  gap: 5px;
+  margin-left: 1em;
+}
 button.reaction-button {
-  border: 1px solid #e0e3e9;
+  border: 1px solid #f1e9ff;
   padding: 5px 10px;
-  margin: 5px 6px 10px;
-  border-radius: 4px;
+  border-radius: 50px;
   white-space: nowrap;
+
+  &:hover {
+    border-color: #cab0f4;
+  }
+  &:focus {
+    border-color: #a883e4;
+  }
 }
 
 .spinner {

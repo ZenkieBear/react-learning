@@ -2,6 +2,7 @@ import { useAppSelector } from 'app/hooks'
 import { Link, useParams} from 'react-router-dom'
 import PostAuthor from './PostAuthor'
 import TimeAgo from './TimeAgo'
+import ReactionButton from './ReactionButton'
 
 interface RequestParams{
   postId: string
@@ -33,6 +34,7 @@ export const SinglePostPage = () => {
         <Link to={`/editPost/${post.id}`} className="button">
           Edit Post
         </Link>
+        <ReactionButton post={post} />
       </article>
     </section>
   )
