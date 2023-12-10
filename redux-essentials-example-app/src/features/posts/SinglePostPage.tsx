@@ -1,14 +1,11 @@
 import { useAppSelector } from 'app/hooks'
-import React from 'react'
-import {match} from 'react-router-dom'
+import { useParams} from 'react-router-dom'
 
 interface RequestParams{
   postId: string
 }
-export const SinglePostPage = ({ match }: {
-  match: match<RequestParams>
-}) => {
-  const { postId } = match.params
+export const SinglePostPage = () => {
+  const { postId } = useParams<RequestParams>()
 
   const post = useAppSelector(state =>
     state.posts.find(post => post.id === postId)
