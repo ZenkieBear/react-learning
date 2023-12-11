@@ -1,12 +1,12 @@
-import { useSelector } from "react-redux"
-import { RootState } from "app/store"
 import { Link } from "react-router-dom"
 import PostAuthor from "./PostAuthor"
 import TimeAgo from "./TimeAgo"
 import ReactionButton from "./ReactionButton"
+import { selectAllPosts } from "./postsSlice"
+import { useAppSelector } from "app/hooks"
 
 export const PostsList = () => {
-  const posts = useSelector((state: RootState) => state.posts)
+  const posts = useAppSelector(selectAllPosts)
 
   const orderedPosts = posts.slice().sort((a, b) => b.date.localeCompare(a.date))
 

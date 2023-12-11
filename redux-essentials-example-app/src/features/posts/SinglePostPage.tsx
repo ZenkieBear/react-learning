@@ -3,6 +3,7 @@ import { Link, useParams} from 'react-router-dom'
 import PostAuthor from './PostAuthor'
 import TimeAgo from './TimeAgo'
 import ReactionButton from './ReactionButton'
+import { selectPostById } from './postsSlice'
 
 interface RequestParams{
   postId: string
@@ -10,9 +11,7 @@ interface RequestParams{
 export const SinglePostPage = () => {
   const { postId } = useParams<RequestParams>()
 
-  const post = useAppSelector(state =>
-    state.posts.find(post => post.id === postId)
-  )
+  const post = useAppSelector(state => selectPostById(state, postId))
 
   if (!post) {
     return (

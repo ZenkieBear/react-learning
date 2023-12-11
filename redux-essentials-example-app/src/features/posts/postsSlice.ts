@@ -1,4 +1,5 @@
 import { PayloadAction, createSlice, nanoid } from '@reduxjs/toolkit'
+import { RootState } from 'app/store'
 
 const initialReaction = {
   thumbsUp: 0,
@@ -84,3 +85,8 @@ const postsSlice = createSlice({
 export const { postAdded, postUpdated, reactionAdded } = postsSlice.actions
 
 export default postsSlice.reducer
+
+export const selectAllPosts = (state: RootState) => state.posts
+export const selectPostById = (state: RootState, postId: string) =>
+  state.posts.find(post => post.id === postId)
+
