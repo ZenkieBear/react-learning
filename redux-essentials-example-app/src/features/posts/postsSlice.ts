@@ -12,7 +12,7 @@ const initialReaction = {
 
 const initialState: {
   posts: Posts,
-  status: 'idle' | 'loading' | 'succeeded' | 'failed',
+  status: RequestStatus,
   error: string | undefined
 } = {
   posts: [],
@@ -24,6 +24,16 @@ export const fetchPosts = createAsyncThunk('posts/fetchPosts', async () => {
   const resp = await client.get('/fakeApi/posts')
   return resp.data
 })
+
+export const addNewPost = createAsyncThunk(
+  'posts/addNewPost',
+  // with out id
+  async (initialPost: Omit<Post, 'id' | 'date'>) => {
+    const resp = await client.post('/fakeApi/posts', initialPost)
+    // with id generated from server
+    return resp.data
+  }
+)
 
 const postsSlice = createSlice({
   name: 'posts',
@@ -92,6 +102,10 @@ const postsSlice = createSlice({
       .addCase(fetchPosts.rejected, (state, action) => {
         state.status = 'failed'
         state.error = action.error.message
+      })
+      .addCase(addNewPost.fulfilled, (state, action) => {
+        // add to store
+        state.posts.push(action.payload)
       })
   }
 })

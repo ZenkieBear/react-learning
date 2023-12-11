@@ -1,11 +1,12 @@
 import React, { ChangeEventHandler, useState } from 'react'
-import { postAdded } from './postsSlice'
+import { addNewPost } from './postsSlice'
 import { useAppDispatch, useAppSelector } from 'app/hooks'
 
 export const AddPostForm = () => {
   const [title, setTitle] = useState('')
   const [content, setContent] = useState('')
   const [userId, setUserId] = useState('')
+  const [addRequestStatus, setAddRequestStatus] = useState<RequestStatus>('idle')
 
   const dispatch = useAppDispatch()
 
@@ -14,15 +15,23 @@ export const AddPostForm = () => {
   const onTitleChanged: ChangeEventHandler<HTMLInputElement> = e => setTitle(e.target.value)
   const onContentChanged: ChangeEventHandler<HTMLTextAreaElement> = e => setContent(e.target.value)
 
-  const savePost = () => {
-    if (title && content) {
-      dispatch(postAdded(title, content, userId))
-      setTitle('')
-      setContent('')
+  const canSave = [title, content, userId].every(Boolean) && addRequestStatus === 'idle'
+
+  const savePost = async () => {
+    if (canSave) {
+      try {
+        setAddRequestStatus('loading')
+        await dispatch(addNewPost({ title, content, userId })).unwrap()
+        setTitle('')
+        setContent('')
+        setUserId('')
+      } catch(e) {
+        console.log('Failed to save the post: ', e);
+      } finally {
+        setAddRequestStatus('idle')
+      }
     }
   }
-
-  const canSave = title && content && userId
 
   return (
     <section>

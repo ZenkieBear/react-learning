@@ -7,3 +7,4 @@ interface Post {
   reactions?: {[key: string]: number}
 }
 type Posts = Post[]
+type RequestStatus = 'idle' | 'loading' | 'succeeded' | 'failed'

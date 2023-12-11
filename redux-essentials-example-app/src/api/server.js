@@ -13,7 +13,7 @@ const POSTS_PER_USER = 3
 const RECENT_NOTIFICATIONS_DAYS = 7
 
 // Add an extra delay to all endpoints, so loading spinners show up.
-const ARTIFICIAL_DELAY_MS = 2000
+const ARTIFICIAL_DELAY_MS = 500
 
 /* RNG setup */
 
@@ -124,7 +124,7 @@ for (let i = 0; i < NUM_USERS; i++) {
 
 const serializePost = (post) => ({
   ...post,
-  user: post.user.id,
+  userId: post.user.id,
 })
 
 /* MSW REST API Handlers */
@@ -147,7 +147,7 @@ export const handlers = [
 
     data.date = new Date().toISOString()
 
-    const user = db.user.findFirst({ where: { id: { equals: data.user } } })
+    const user = db.user.findFirst({ where: { id: { equals: data.userId } } })
     data.user = user
     data.reactions = db.reaction.create()
 
