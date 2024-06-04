@@ -16,7 +16,7 @@
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.12",
     "eslint-plugin-react-hooks": "^0.0.0-experimental-3ff846d10-20230724",
-    "next": "13.4.12",
+    "next": "^14.2.3",
     "react": "experimental",
     "react-dom": "experimental",
     "toastify-js": "^1.12.0",
